@@ -9,10 +9,8 @@
   "dependencies": {
     "sharp": "^0.30.0"
   },
-  "devDependencies": {},
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {}
 }
