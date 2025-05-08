@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     }
   ],
-  "engines": {
-    "node": "18.x"
+  "env": {
+    "NODE_VERSION": "18.x"
   }
 }
