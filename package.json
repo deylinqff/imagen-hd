@@ -1,11 +1,7 @@
 {
   "name": "imagen-hd-api",
   "version": "1.0.0",
-  "description": "API para convertir imágenes a calidad HD",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
+  "description": "API para convertir imágenes a HD",
   "dependencies": {
     "sharp": "^0.30.0"
   }
