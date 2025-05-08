@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/convertir-hd.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "engines": {
+    "node": "18.x"
+  }
+}
