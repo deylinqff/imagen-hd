@@ -7,25 +7,24 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const buffers = [];
-
+    const chunks = [];
     for await (const chunk of req) {
-      buffers.push(chunk);
+      chunks.push(chunk);
     }
 
-    const imageBuffer = Buffer.concat(buffers);
-    const image = sharp(imageBuffer);
+    const buffer = Buffer.concat(chunks);
+    const image = sharp(buffer);
     const metadata = await image.metadata();
 
     const width = 1920;
     const height = Math.round((metadata.height / metadata.width) * width);
 
-    const hdImageBuffer = await image.resize(width, height).jpeg().toBuffer();
+    const hdBuffer = await image.resize(width, height).jpeg().toBuffer();
 
     res.setHeader('Content-Type', 'image/jpeg');
-    res.status(200).send(hdImageBuffer);
-  } catch (error) {
-    console.error('Error al procesar la imagen:', error);
+    res.status(200).send(hdBuffer);
+  } catch (err) {
+    console.error(err);
     res.status(500).send('Error al procesar la imagen');
   }
 };
